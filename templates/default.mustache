@@ -1,5 +1,5 @@
-" Base16 <%- scheme %> (https://github.com/chriskempson/base16)
-" Scheme: <%- author %>
+" Base16 {{scheme-author}} (https://github.com/chriskempson/base16)
+" Scheme: {{scheme-name}}
 " Neovim template: Nate Soares (http://so8r.es)
 
 " The main ideas of this template are as follows:
@@ -25,7 +25,7 @@ if exists('syntax_on')
 endif
 
 " Tell them our name.
-let g:colors_name = '<%- schemeSlug %>'
+let g:colors_name = '{{scheme-slug}}'
 
 
 " The Color Dictionary -------------------------------------------------------
@@ -36,22 +36,22 @@ let g:colors_name = '<%- schemeSlug %>'
 "
 " dark3 is the darkest grey; light3 is the lightest grey.
 let g:base16_hex_colors = {
-      \ 'black':  '#<%- base["00"]["hex"] %>',
-      \ 'dark3':  '#<%- base["01"]["hex"] %>',
-      \ 'dark2':  '#<%- base["02"]["hex"] %>',
-      \ 'dark1':  '#<%- base["03"]["hex"] %>',
-      \ 'light1': '#<%- base["04"]["hex"] %>',
-      \ 'light2': '#<%- base["05"]["hex"] %>',
-      \ 'light3': '#<%- base["06"]["hex"] %>',
-      \ 'white':  '#<%- base["07"]["hex"] %>',
-      \ 'red':    '#<%- base["08"]["hex"] %>',
-      \ 'orange': '#<%- base["09"]["hex"] %>',
-      \ 'yellow': '#<%- base["0A"]["hex"] %>',
-      \ 'green':  '#<%- base["0B"]["hex"] %>',
-      \ 'aqua':   '#<%- base["0C"]["hex"] %>',
-      \ 'blue':   '#<%- base["0D"]["hex"] %>',
-      \ 'purple': '#<%- base["0E"]["hex"] %>',
-      \ 'brown':  '#<%- base["0F"]["hex"] %>'}
+      \ 'black':  '#{{base00-hex}}',
+      \ 'dark3':  '#{{base01-hex}}',
+      \ 'dark2':  '#{{base02-hex}}',
+      \ 'dark1':  '#{{base03-hex}}',
+      \ 'light1': '#{{base04-hex}}',
+      \ 'light2': '#{{base05-hex}}',
+      \ 'light3': '#{{base06-hex}}',
+      \ 'white':  '#{{base07-hex}}',
+      \ 'red':    '#{{base08-hex}}',
+      \ 'orange': '#{{base09-hex}}',
+      \ 'yellow': '#{{base0A-hex}}',
+      \ 'green':  '#{{base0B-hex}}',
+      \ 'aqua':   '#{{base0C-hex}}',
+      \ 'blue':   '#{{base0D-hex}}',
+      \ 'purple': '#{{base0E-hex}}',
+      \ 'brown':  '#{{base0F-hex}}'}
 
 let g:base16_cterm_colors = {
       \ 'black':  0,
@@ -349,7 +349,7 @@ endif
 
 " Airline config. ------------------------------------------------------------
 if get(g:, 'base16_airline', 0)
-  let s:palette = substitute('<%- schemeSlug %>', '-', '_', 'g').'_'.&background
+  let s:palette = substitute('{{scheme-slug}}', '-', '_', 'g').'_'.&background
   let g:airline#themes#{s:palette}#palette = {}
   function! s:airlist(fg, bg)
     return [
